@@ -1,0 +1,602 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.cont {
+    color: white;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+
+.autoblur {
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation {
+    0% {
+        filter: blur(40px);
+    }
+
+    40%,
+    65% {
+        filter: blur(0);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    100% {
+        filter: blur(40px);
+        transform: translateY(-130px);
+        opacity: 0;
+    }
+}
+
+
+header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.head-right {
+    display: flex;
+    gap: 30px;
+}
+
+.head-right a {
+    display: flex;
+    gap: 30px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.head-right a:hover {
+    color: gray;
+}
+
+.head-left {
+    display: flex;
+    gap: 40px;
+}
+
+.head-left button {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.head-left button:hover {
+    background-color: rgb(170, 168, 168);
+    box-shadow: 0 0 20px rgba(109, 106, 106, 0.906);
+}
+
+.hero .info {
+    position: absolute;
+    top: 15%;
+    left: 3%;
+
+}
+
+.info h1 {
+    font-size: 97px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.info p {
+    width: 230px;
+    color: rgb(223, 218, 218);
+}
+
+.marvel {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 115px;
+    position: absolute;
+    bottom: 20%;
+    right: 4%;
+}
+
+.info button {
+    border: 2px solid rgba(227, 5, 5, 0.906);
+    padding: 10px 40px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(227, 5, 5, 0.906);
+}
+
+.info button:hover {
+    background-color: rgb(39, 33, 33);
+}
+
+.about {
+    width: 100%;
+    height: 100%;
+    margin-top: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-box {
+    width: 360px;
+    height: 510px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.about p {
+    font-size: 14px;
+}
+
+.about h1 {
+    font-size: 100px;
+    max-width: 1150px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    background: linear-gradient(to right, red, rgb(144, 99, 99), rgb(179, 54, 54), #f94b16, rgb(228, 27, 27), red);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+    to {
+        background-position: 200%;
+    }
+}
+
+.about h4 {
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.about h5 {
+    margin-top: 5px;
+    color: gray;
+    max-width: 465px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.info-sec {
+    width: 80%;
+    margin-top: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.info-sec h3 {
+    margin-bottom: 0;
+
+}
+
+.info-sec p {
+    margin-top: 1%;
+    max-width: 390px;
+    color: gray;
+    line-height: 25px;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    position: relative;
+    width: auto;
+    height: 40vh;
+    overflow: hidden;
+    border: 1px solid gray;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px lightgray;
+}
+
+.card h1 {
+    position: absolute;
+    margin: 0;
+    top: 10px;
+    left: 5%;
+    font-size: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    z-index: 1;
+    background: linear-gradient(to right, red, rgb(144, 99, 99), rgb(179, 54, 54), #f94b16, rgb(228, 27, 27), red);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+
+
+}
+
+.card p {
+    position: absolute;
+    top: 80px;
+    left: 5%;
+    z-index: 1;
+    max-width: 250px;
+    color: lightgray;
+}
+
+.card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card button {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    cursor: pointer;
+    color: gray;
+    box-shadow: 0 0 5px lightslategray;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    box-shadow: 0 0 15px lightgray;
+    opacity: 0.5;
+}
+
+.card:nth-child(1) {
+    grid-column: span 2;
+}
+
+.card:nth-child(2) {
+    grid-row: span 2;
+    height: 83vh;
+}
+
+
+.contact-sec {
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.contact-sec .img1 {
+    position: absolute;
+    top: 15%;
+    right: 10px;
+    height: 250px;
+    clip-path: polygon(39% 20%, 86% 14%, 82% 69%, 37% 64%);
+}
+
+.contact-sec .img2 {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    height: 200px;
+    clip-path: polygon(15% 2%, 68% 20%, 65% 84%, 13% 96%);
+
+}
+
+.contact-sec .img3 {
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 200px;
+    clip-path: polygon(22% 10%, 53% 11%, 74% 32%, 69% 56%, 54% 75%, 29% 71%, 16% 48%, 14% 33%);
+
+}
+
+.contact-sec p {
+    margin-top: 100px;
+}
+
+.contact-sec h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 75px;
+    max-width: 650px;
+    text-align: center;
+    background: linear-gradient(to right, red, rgb(144, 99, 99), rgb(179, 54, 54), #f94b16, rgb(228, 27, 27), red);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+
+.contact-sec button{
+    padding: 10px 40px;
+    border-radius: 30px;
+    border: 1px solid gray;
+    cursor: pointer;
+    background-color: black;
+    color: gray;
+    box-shadow: 0 0 5px lightslategray;
+    transition: 0.3s;
+}
+.contact-sec button:hover{
+    box-shadow: 0 0 15px lightgray;
+    opacity: 0.5;
+}
+
+
+.footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(211,211,211,0.21);
+    backdrop-filter: blur(10px);
+    height: 120px;
+}
+
+.footer p{
+    margin: 0px 100px;
+}
+.footer ul{
+    display: flex;
+    list-style:none ;
+    margin-right: 140px;
+}
+.footer a{
+    text-decoration: none;
+    color: white;
+    color: white;
+    padding: 7px 7px;
+    border: 1px solid rgba(59, 155, 215, 0.363);
+    border-radius: 50px;
+    margin: 0 10px;
+}
+
+.autotakefull{
+    animation: autotakefullanimation both;
+    animation-timeline: view(70% 65%);
+}
+@keyframes autotakefullanimation{
+    to{
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        margin-bottom: 100px;
+    }
+}
+
+.autodisplay{
+    animation: autodisplayanimation both;
+    animation-timeline: view(70% 5%);
+}
+@keyframes autodisplayanimation{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Phones)
+========================================= */
+
+@media (max-width: 1024px) {
+    .info h1 {
+        font-size: 80px;
+    }
+    .marvel {
+        font-size: 90px;
+    }
+    .about h1 {
+        font-size: 75px;
+    }
+    .contact-sec h1 {
+        font-size: 60px;
+    }
+    .info-cards {
+        gap: 15px;
+    }
+    .footer p {
+        margin: 0 40px;
+    }
+    .footer ul {
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    .head-right {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .info h1 {
+        font-size: 55px;
+    }
+    .marvel {
+        font-size: 65px;
+        bottom: 10%;
+    }
+    .hero .info {
+        top: 25%;
+    }
+    .about h1 {
+        font-size: 50px;
+        line-height: 1.1;
+        padding: 0 20px;
+    }
+    .image-box {
+        width: 80%;
+        height: 400px;
+    }
+    .info-sec {
+        width: 90%;
+    }
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+    .card:nth-child(1) {
+        grid-column: span 1;
+    }
+    .card:nth-child(2) {
+        grid-row: span 1;
+        height: 40vh;
+    }
+    .card h1 {
+        font-size: 45px;
+    }
+    .contact-sec h1 {
+        font-size: 45px;
+        padding: 0 20px;
+    }
+    .contact-sec .img1 {
+        height: 150px;
+    }
+    .contact-sec .img2 {
+        height: 120px;
+        left: 10px;
+    }
+    .contact-sec .img3 {
+        height: 120px;
+    }
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 30px 0;
+        gap: 15px;
+    }
+    .footer p {
+        margin: 0;
+        text-align: center;
+    }
+    .footer ul {
+        margin-right: 0;
+        padding: 0;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .head-left {
+        gap: 20px;
+    }
+    .head-right {
+        font-size: 14px;
+        gap: 10px;
+    }
+    .info h1 {
+        font-size: 40px;
+    }
+    .marvel {
+        font-size: 45px;
+        bottom: 5%;
+    }
+    .about h1 {
+        font-size: 35px;
+        margin-top: 10px;
+    }
+    .image-box {
+        width: 90%;
+        height: 350px;
+    }
+    .about h5 {
+        padding: 0 15px;
+    }
+    .card h1 {
+        font-size: 35px;
+    }
+    .contact-sec h1 {
+        font-size: 35px;
+    }
+    .contact-sec .img1 {
+        height: 100px;
+        top: 25%;
+    }
+    .contact-sec .img2 {
+        height: 80px;
+        top: 25%;
+    }
+    .contact-sec .img3 {
+        height: 80px;
+    }
+}
